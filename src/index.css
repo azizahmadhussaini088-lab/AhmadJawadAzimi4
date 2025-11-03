@@ -1,0 +1,41 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fallback styles if Tailwind not installed yet */
+:root{
+  --bg: #05060a;
+  --card: rgba(255,255,255,0.04);
+  --muted: rgba(255,255,255,0.8);
+  --accent: linear-gradient(90deg,#7c3aed,#06b6d4);
+}
+.light { --bg: #f7fbff; --muted: #0b1220; --card: rgba(2,6,23,0.03); }
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1000px 400px at 10% 10%, rgba(124,58,237,0.08), transparent), var(--bg);
+  color:var(--muted);
+  direction: rtl;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:50;padding:12px 0}
+.nav-links{display:flex;gap:12px;align-items:center}
+.btn{cursor:pointer;padding:8px 12px;border-radius:10px;border:none;background:var(--card);color:var(--muted)}
+.logo{font-weight:800}
+.card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;min-height:72vh}
+@media(min-width:900px){ .hero{grid-template-columns:1fr 440px} }
+.avatar{width:380px;height:380px;object-fit:cover;border-radius:16px;display:block;border:1px solid rgba(255,255,255,0.03)}
+.section{padding:48px 0}
+.grid-3{display:grid;gap:18px}
+@media(min-width:760px){ .grid-3{grid-template-columns:repeat(3,1fr)} }
+.skill-bar{height:12px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden}
+.skill-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#06b6d4)}
+
+/* small footer */
+.footer{padding:28px 0;text-align:center;color:rgba(255,255,255,0.5)}
